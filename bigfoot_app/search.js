@@ -1,8 +1,6 @@
 $("document").ready(function() {
   $("#search-button").click(function(event){
-    console.log("In click");
     event.preventDefault();
-
     $.ajax({
             url: 'http://localhost:9200/bigfoot/footprint/_search?q=shore',
             type: 'GET',
