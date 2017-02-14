@@ -1,0 +1,42 @@
+h1 {
+  margin-bottom: 0px;
+}
+
+.center {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.arvo {
+  font-family: 'Arvo', serif;
+}
+
+.large {
+  font-size: 86px;
+}
+
+.medium {
+  font-size: 16px;
+}
+
+.bold {
+  font-weight: bold;;
+}
+
+.top-pad {
+  margin-top: 20px;
+}
+
+#search-button {
+    background-color: #64B5F6;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#search-field {
+  width: 280px;
+}
