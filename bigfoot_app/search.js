@@ -1,13 +1,15 @@
 $("document").ready(function() {
-  $("#search-button").click(function(event){
+  $("#search-form").submit(function(event){
     event.preventDefault();
+    var searchInput = $(this).serialize();
     $.ajax({
-            url: 'http://localhost:9200/bigfoot/footprint/_search?q=shore',
+            url: 'http://localhost:9200/bigfoot/footprint/_search?q=' + searchInput,
             type: 'GET',
             dataType: 'json',
             success: function (data, textStatus, xhr) {
-              $('#result').append(data);
-              console.log(data);
+              $.each(data.hits.hits[0]._source, function(key, value){
+                $("#result").append('<div>' + key + ': ' + value + '</div>');
+              });
             },
             error: function (xhr, textStatus, errorThrown) {
               console.log(errorThrown);
