@@ -13,7 +13,11 @@ $("document").ready(function() {
 
         $.each(data.hits.hits[0]._source, function(key, value) {
           if(value) {
-            jsonList.push('<tr><td>' + key.replace('f_', '') + '</td><td>' + value + '</td></tr>');
+            if(String(value).includes(searchInput)) {
+              jsonList.push('<tr><td>' + key.replace('f_', '') + '</td><td><mark>' + value + '</mark></td></tr>');
+            } else {
+              jsonList.push('<tr><td>' + key.replace('f_', '') + '</td><td>' + value + '</td></tr>');
+            }
           }
         });
 
