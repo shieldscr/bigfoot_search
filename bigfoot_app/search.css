@@ -20,21 +20,11 @@ h1 {
 }
 
 .bold {
-  font-weight: bold;;
-}
-
-.top-pad {
-  margin-top: 20px;
+  font-weight: bold;
 }
 
 #search-button {
-    background-color: #64B5F6;
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+    padding-top:10px;
 }
 
 #search-field {

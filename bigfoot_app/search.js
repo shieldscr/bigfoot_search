@@ -17,7 +17,7 @@ $("document").ready(function() {
           }
         });
 
-        $("#result").html('<table>' + jsonList.join("") + '</table>');
+        $("#result").html('<table class="striped">' + jsonList.join("") + '</table>');
 
       },
       error: function (xhr, textStatus, errorThrown) {
