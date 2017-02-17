@@ -2,16 +2,14 @@ $("document").ready(function() {
   $("#search-form").submit(function(event){
     event.preventDefault();
     var searchInput = $('#search-form :input').val();
-    var type = searchInput.split(' ')[0];
-    var searchTerm = searchInput.split(' ')[1];
 
     $.ajax({
-      url: 'http://localhost:9200/bigfoot/' + type + '/_search?q=' + searchInput,
+      url: 'http://localhost:9200/bigfoot/all/_search?q=' + searchInput,
       type: 'GET',
       dataType: 'json',
       success: function (data, textStatus, xhr) {
 
-        console.log('search: ' + 'http://localhost:9200/bigfoot/' + type + '/_search?q=' + searchTerm);
+        console.log('search: ' + 'http://localhost:9200/bigfoot/all/_search?q=' + searchInput);
 
         var outputList = [];
         var finalHtml = [];
@@ -21,7 +19,7 @@ $("document").ready(function() {
           $.each(data.hits.hits, function(key, value) {
             $.each(value._source, function(key, value) {
               if(value) {
-                if(String(value).includes(searchTerm)) {
+                if(String(value).includes(searchInput)) {
                   outputList.push('<tr><td>' + key.replace('f_', '') + '</td><td><mark>' + value + '</mark></td></tr>');
                 } else {
                   outputList.push('<tr><td>' + key.replace('f_', '') + '</td><td>' + value + '</td></tr>');
