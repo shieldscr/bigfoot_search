@@ -35,6 +35,10 @@ td {
   padding-top: 25px;
 }
 
+.end-table-row {
+  background-color: #F44336 !important;
+}
+
 #search-button {
     padding-top:10px;
 }

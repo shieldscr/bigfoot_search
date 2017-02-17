@@ -25,6 +25,7 @@ $("document").ready(function() {
               }
             }
           });
+          outputList.push('<tr class="end-table-row"><td></td><td></td></tr>');
           $("#result").html('<table class="striped">' + outputList.join("") + '</table>');
         } else {
           $("#result").html('<h3 class="medium center pad-top">No results found. Bigfoot walks the Earth...</h3>');
